@@ -31,38 +31,38 @@ namespace ExamConsole
 
     public interface IVictorina
     {
-        public IMyXmlFile XmlFile { get; set; }
-        public string Name { get; set; }
-        public string Path { get; set; }
+         IMyXmlFile XmlFile { get; set; }
+         string Name { get; set; }
+         string Path { get; set; }
         List<IQuestion> questions { get; set; }
-        public void Start();
-        public void Save();
-        public void Load();
+         void Start();
+         void Save();
+         void Load();
 
     }
 
     public interface IQuestion
     {
-        public string Name { set; get; }
+         string Name { set; get; }
         List<string> variants { get; set; }
         List<int> answers { get; set; }
-        public string ToString();
+         string ToString();
     }
 
     public interface IUser
     {
-        public string Name { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public DateTime BirthDay { get; set; }
-        public string ToString();
+         string Name { get; set; }
+         string Login { get; set; }
+         string Password { get; set; }
+         DateTime BirthDay { get; set; }
+         string ToString();
     }
 
     public interface IAuth
     {
         IMyXmlFile XmlFile { get; set; }
-        public bool GetAuth(IUser user);
-        public string GetUserName(IUser user);
+         bool GetAuth(IUser user);
+         string GetUserName(IUser user);
 
 
     }
@@ -70,50 +70,50 @@ namespace ExamConsole
     public interface IRegister
     {
         IMyXmlFile XmlFile { get; set; }
-        public bool SaveNewUser(IUser user);
-        public bool ExistUser(IUser user);
+         bool SaveNewUser(IUser user);
+         bool ExistUser(IUser user);
 
     }
     public interface ISettings
     {
         IMyXmlFile XmlFile { get; set; }
-        public bool ChangeUserSettingsPassword(IUser user, string password);
-        public bool ChangeUserSettingsBirthDate(IUser user, DateTime date);
-        public bool ChangeUserSettingsAll(IUser user, string password, DateTime date);
+         bool ChangeUserSettingsPassword(IUser user, string password);
+        bool ChangeUserSettingsBirthDate(IUser user, DateTime date);
+         bool ChangeUserSettingsAll(IUser user, string password, DateTime date);
     }
 
     public interface IMyXmlFile
     {
-        public bool ExistFile(string path);
-        public IVictorina GetVictorina(string path);
-        public bool SaveVictorina(IVictorina victorina);
-        public IUser GetUser(string path);
-        public bool SaveUser(string path, IUser user, bool rewrite = false);
-        public IResultTable GetResultTable(string path);
-        public bool SaveResultTable(string path, IResultTable rt);
-        public IMassiveVictorins GetAllVictorins();
+         bool ExistFile(string path);
+         IVictorina GetVictorina(string path);
+         bool SaveVictorina(IVictorina victorina);
+         IUser GetUser(string path);
+         bool SaveUser(string path, IUser user, bool rewrite = false);
+         IResultTable GetResultTable(string path);
+         bool SaveResultTable(string path, IResultTable rt);
+         IMassiveVictorins GetAllVictorins();
 
     }
 
     public interface IResultTable
     {
-        public string Name { get; set; }
+        string Name { get; set; }
         IMyXmlFile XmlFile { get; set; }
         List<ITableItem> TableItems { get; set; }
-        public string Path { get; set; }
-        public void SaveResultTable();
-        public string Top20(string name);
-        public string AllResults(string name);
+         string Path { get; set; }
+         void SaveResultTable();
+         string Top20(string name);
+         string AllResults(string name);
 
 
     }
 
     public interface ITableItem
     {
-        public string Score { get; set; }
-        public string NameUser { get; set; }
-        public string NameVictorina { get; set; }
-        public string ToString();
+         string Score { get; set; }
+         string NameUser { get; set; }
+        string NameVictorina { get; set; }
+         string ToString();
 
     }
 
@@ -121,11 +121,11 @@ namespace ExamConsole
     {
         IMyXmlFile XmlFile { get; set; }
         IVictorina Victorina { get; set; }
-        public void NewVictorina();
+         void NewVictorina();
 
-        public void SaveVictorina();
+         void SaveVictorina();
 
-        public void EditVictorina();
+         void EditVictorina();
     }
     /*class Auth : IAuth
     {

@@ -60,7 +60,7 @@ namespace ExamConsole
                     if (answerUser.Length > 1)
                     {
                         string[] anss;
-                        anss = answerUser.Split("");
+                        anss = answerUser.Split();
                         foreach (string a in anss)
                         {
                             int index = Int32.Parse(a);
